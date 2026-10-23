@@ -2,6 +2,7 @@ import Image from "next/image";
 import logo from "@/assets/logo.png";
 import Link from "next/link";
 import Navlinks from "./Navlinks";
+import { Suspense } from "react";
 
 const Navbar = () => {
   const navLinks = (
@@ -40,7 +41,7 @@ const Navbar = () => {
             tabIndex={-1}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            {navLinks}
+            <Suspense fallback={<li>Loading...</li>}> {navLinks} </Suspense>
           </ul>
         </div>
 
@@ -50,7 +51,9 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+        <ul className="menu menu-horizontal px-1">
+          <Suspense fallback={<li>Loading...</li>}> {navLinks} </Suspense>
+        </ul>
       </div>
 
       <div className="navbar-end">
