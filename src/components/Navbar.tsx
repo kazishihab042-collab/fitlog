@@ -57,7 +57,12 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end">
-        <a className="btn btn-primary">Get Started</a>
+        <Link className="btn" href="/myplan">
+          Workout (0)
+        </Link>
+        <Link className="btn" href="/myplan">
+          My Plan(0)
+        </Link>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 
 const MyPLan = () => {
   return (
-    <div className="container flex flex-col mx-auto">
+    <div className="container mx-auto flex flex-col gap-2">
       <div className="stats shadow">
         <div className="stat place-items-center">
           <div className="stat-title">Downloads</div>
@@ -22,38 +22,30 @@ const MyPLan = () => {
           <div className="stat-desc">↘︎ 90 (14%)</div>
         </div>
       </div>
-      {/* name of each tab group should be unique */}
+
+      {/* Tabs */}
       <div className="tabs tabs-box">
         <input
           type="radio"
           name="my_tabs_6"
           className="tab"
-          aria-label="Tab 1"
-        />
-        <div className="tab-content bg-base-100 border-base-300 p-6">
-          Tab content 1
-        </div>
-
-        <input
-          type="radio"
-          name="my_tabs_6"
-          className="tab"
-          aria-label="Tab 2"
+          aria-label="Today's Plan"
           defaultChecked
         />
-        <div className="tab-content bg-base-100 border-base-300 p-6">
-          Tab content 2
-        </div>
 
         <input
           type="radio"
           name="my_tabs_6"
           className="tab"
-          aria-label="Tab 3"
+          aria-label="Saved"
         />
-        <div className="tab-content bg-base-100 border-base-300 p-6">
-          Tab content 3
-        </div>
+
+        <select defaultValue="Pick a color" className="select ms-auto">
+          <option disabled>Pick a color</option>
+          <option>Crimson</option>
+          <option>Amber</option>
+          <option>Velvet</option>
+        </select>
       </div>
     </div>
   );

@@ -1,4 +1,3 @@
-
 export interface IProduct {
   id: number;
   name: string;
@@ -13,3 +12,10 @@ export interface IProduct {
   rating: number;
   description: string;
   instructions: string[];
+}
+export interface IproductContext {
+  planlist: IProduct[];
+  savedlist: IProduct[];
+  setPlanlist: React.Dispatch<React.SetStateAction<IProduct[]>>;
+  setSavedlist: React.Dispatch<React.SetStateAction<IProduct[]>>;
+}
