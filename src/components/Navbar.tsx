@@ -1,10 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import logo from "@/assets/logo.png";
 import Link from "next/link";
 import Navlinks from "./Navlinks";
 import { Suspense } from "react";
+import { useProductContext } from "@/context/ProductContext";
 
 const Navbar = () => {
+  const { planlist, savedlist } = useProductContext();
+
   const navLinks = (
     <>
       <li>
@@ -15,6 +20,7 @@ const Navbar = () => {
       </li>
     </>
   );
+
   return (
     <div className="navbar container mx-auto bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -41,7 +47,7 @@ const Navbar = () => {
             tabIndex={-1}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <Suspense fallback={<li>Loading...</li>}> {navLinks} </Suspense>
+            <Suspense fallback={<li>Loading...</li>}>{navLinks}</Suspense>
           </ul>
         </div>
 
@@ -52,16 +58,16 @@ const Navbar = () => {
 
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          <Suspense fallback={<li>Loading...</li>}> {navLinks} </Suspense>
+          <Suspense fallback={<li>Loading...</li>}>{navLinks}</Suspense>
         </ul>
       </div>
 
       <div className="navbar-end">
         <Link className="btn" href="/myplan">
-          Workout (0)
+          Saved ({savedlist.length})
         </Link>
         <Link className="btn" href="/myplan">
-          My Plan(0)
+          My Plan({planlist.length})
         </Link>
       </div>
     </div>
