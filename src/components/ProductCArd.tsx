@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { IProduct } from "@/types/product.type";
+import Link from "next/link";
 
 const ProductCArd = ({ product }: { product: IProduct }) => {
   return (
@@ -56,7 +57,9 @@ const ProductCArd = ({ product }: { product: IProduct }) => {
         <div className="card-actions mt-3 items-center justify-between">
           <span className="font-bold">⭐ {product.rating}</span>
 
-          <button className="btn btn-primary btn-sm">View Details</button>
+          <Link href={`./products/${product.id}`}>
+            <button className="btn btn-primary btn-sm">View Details</button>
+          </Link>
         </div>
       </div>
     </div>

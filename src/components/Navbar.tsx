@@ -1,7 +1,19 @@
 import Image from "next/image";
 import logo from "@/assets/logo.png";
+import Link from "next/link";
+import Navlinks from "./Navlinks";
 
 const Navbar = () => {
+  const navLinks = (
+    <>
+      <li>
+        <Navlinks href={"/"}>Workouts</Navlinks>
+      </li>
+      <li>
+        <Navlinks href={"/myplan"}>My Plan</Navlinks>
+      </li>
+    </>
+  );
   return (
     <div className="navbar container mx-auto bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -28,15 +40,7 @@ const Navbar = () => {
             tabIndex={-1}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <a>Home</a>
-            </li>
-            <li>
-              <a>Workouts</a>
-            </li>
-            <li>
-              <a>About</a>
-            </li>
+            {navLinks}
           </ul>
         </div>
 
@@ -46,17 +50,7 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Home</a>
-          </li>
-          <li>
-            <a>Workouts</a>
-          </li>
-          <li>
-            <a>About</a>
-          </li>
-        </ul>
+        <ul className="menu menu-horizontal px-1">{navLinks}</ul>
       </div>
 
       <div className="navbar-end">
