@@ -11,7 +11,6 @@ const AllProducts = ({ products }: AllProductsProps) => {
       {" "}
       <h1 className="text-3xl font-bold">THE LIBRARY</h1>{" "}
       <p className="mt-2">Twelve lifts covering every major muscle group.</p>
-      ```
       {!Array.isArray(products) || products.length === 0 ? (
         <p className="mt-6 text-gray-500">No products found.</p>
       ) : (

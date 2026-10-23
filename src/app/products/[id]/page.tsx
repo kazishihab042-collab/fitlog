@@ -17,7 +17,7 @@ const ProductDetailPage = async ({
     <main className="container mx-auto px-4 py-10">
       {" "}
       <div className="grid gap-10 md:grid-cols-2">
-        {/* Workout Image */}{" "}
+        {" "}
         <div className="relative min-h-[300px] overflow-hidden rounded-2xl bg-base-200 md:min-h-[450px]">
           {product.image ? (
             <Image
